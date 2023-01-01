@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Travel Details</title>
+</head>
+<body>
+    <h1>Fill Travel Details</h1>
+
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="phone_number">Phone Number:</label>
+        <input type="number" name="phone_number">
+        <br>
+        <label for="destination">Choose Your Destination:</label>
+        <select name="destination">
+            <option value="CNB">Kanpur(CNB) central</option>
+            <option value="Lucknow Airport">Lucknow Airport</option>
+            <option value="Kanpur Airport">Kanpur Airport</option>
+        </select>
+        <br>
+        <label for="arrival_date">Date of Arrival:</label>
+        <input type="date" name="arrival_date">
+        <br>
+        <label for="arrival_time">Time of Arrival:</label>
+        <input type="time" name="arrival_time">
+        <br>
+        <label for="preferred_transport">Preferred Transport:</label>
+        <select name="preferred_transport">
+            <option value="car">Car</option>
+            <option value="rikshaw">Rikshaw</option>
+            <option value="None">No Preference</option>
+        </select>
+        <br>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

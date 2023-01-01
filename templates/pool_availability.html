@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+    <p>Matches:</p>
+    {% for match in potential_matches %}
+        <li>username : {{ match.username }}</li>
+        <li>phone : {{ match.phone }}</li>
+        <li>mail : {{ match.email }}</li>
+        <li>Arrival : {{ match.destination }}</li>
+        <li>{{match.arrival}}</li>
+        <li>-----</li>
+    {% endfor %}
+</head>
+</html>
